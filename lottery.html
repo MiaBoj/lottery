@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lottery.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Loto_v3a</title>
+</head>
+
+<body>
+    <main id="main">
+        <div id="nn">
+            <p id="naslov">LOTO</p>
+        </div>
+        <div id="glavni" name="glavni">
+            <div id="dugmici" name="dugmici"></div>
+            <div id="srednji">
+                <p class="komb"><b>Izabrani brojevi:</b></p>
+                <table border="1px solid">
+                    <tr>
+                        <td class="broj">
+                            <p id="prvi"></p>
+                        </td>
+                    </tr>
+                </table>
+                <input type="button" id="start" onclick="start()" value="Start">
+
+                <p class="komb"><b>Izvucena kombinacija:</b></p>
+                <table id="tabela2" border="1px solid">
+                    <tr>
+                        <td class="broj">
+                            <p id="prvi2"></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="rezult">
+                <p id="rrr"></p>
+            </div>
+        </div>
+    </main>
+    <script>
+        var niz = [];//globalni niz
+        b1 = document.getElementById('prvi');
+        a1 = document.getElementById('prvi2');
+        c1 = document.getElementById('start');
+        c1.disabled = true;
+        c1.style.color = 'grey';
+        d1 = document.getElementById('rrr');
+        let i = 1;
+        let ddd = document.getElementsByTagName("div")[2];
+        for (i; i <= 39; i++) {
+        let dugme = document.createElement("button");;
+		dugme.className='btn';
+		dugme.id='btn'+i;
+        dugme.innerHTML = i;
+        ddd.appendChild(dugme);
+		dugme.addEventListener ("click", function() {
+        ubaci(this.innerHTML);
+        });
+        }
+        function ubaci(x) {
+
+            if (niz.length < 7 && !niz.includes(x)) {
+                b1.innerHTML += x + " ";
+
+                niz.push(x);
+
+                niz.sort(function (a, b) {
+                    return (a - b);
+                });
+                kk = niz.join("<div id='qq'></div> ");
+                b1.innerHTML = kk;
+            }
+            c1.disabled = false;
+            c1.style.color = 'yellow';
+        }
+       
+        function start() {
+
+            if (niz.length < 7) {
+                d1.innerHTML = "Odaberite sedam brojeva!";
+            }
+            else {
+                
+                c1.style.color = 'grey';
+                c1.disabled = true;
+                d1.innerHTML = "";
+ 
+                fin = [];
+                var arr = [];
+                while (arr.length < 7) {
+
+                    var abc = (Math.floor(Math.random() * 39) + 1);
+
+                    if (arr.indexOf(abc) == -1) {
+                        arr.push(abc)
+                    };
+                };
+                arr.sort(function (a, b) {
+                    return (a - b);
+                });
+
+                var arr;
+                let interval = 1000;
+                arr.forEach((mode, index) => {
+
+                    setTimeout(() => {
+                        a1.innerHTML += mode + "<div id='qq'></div> "
+                    }, index * interval)
+                });
+
+                niz.forEach((e1) => arr.forEach((e2) => {
+                    if (e1 == e2) {
+                        fin.push(e1)
+
+                        setTimeout(function () { d1.innerHTML = "<hr>Pogodjeni brojevi su: " + fin+ "<br>Uradite refresh stranice za ponovni pokusaj. "; } );
+                    }
+                    if (fin.length == 0) {
+                        setTimeout(function () { d1.innerHTML = "<hr>Nema pogodjenih brojeva! <br>Uradite refresh stranice za ponovni pokusaj. "; });
+
+                    }
+                }
+                ));
+                for (i=1; i<40; i++){
+                     
+                document.getElementById('btn'+i).disabled=true;
+ 
+                }
+            };
+        };	   
+    </script>
+</body>
+
+</html>

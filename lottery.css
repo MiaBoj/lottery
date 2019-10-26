@@ -1,0 +1,122 @@
+body{
+	background-image: url("loto.jpg");
+}
+#naslov{
+	text-align:center;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size:28px;
+	font-weight:bold;
+	letter-spacing:3px;
+	text-shadow:1px 1px 1px black ;
+	color: white;
+}
+#nn{
+	float:left;
+	width:100%;
+}
+#main{
+	/*background-color:#f2826A;*/
+	background: #00FFFF;
+    background: linear-gradient(0deg, rgba(186,106,122,0.7) 24%, #25383C 82%);	 
+    border: 1px solid ;
+	float:left;
+	box-shadow:0 0 3px #2C3539;
+	width: 900px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+}
+.btn{
+	width:51px;
+	height:52px;
+	font-size: 20px;
+	border-radius:25px;
+	font-weight:bold;
+	box-shadow: 0 0 3px black;
+	margin:5px 7px 5px 7px;
+	background: rgb(128,112,7);
+    background: linear-gradient(0deg, rgba(128,112,7,0.7) 30%, rgba(221,212,144,0.7) 80%);
+}
+#dugmici{
+	margin:0 0 0 5px;
+}
+table{
+	margin-top:20px;
+	border:1px solid;
+	background-color:#F7F0EE;
+	box-shadow:0 0 2px black;
+}
+#start{
+	margin:35px 0 0;
+	/*background-color:brown;*/
+	background: rgb(128,53,7);
+    background: linear-gradient(0deg, rgba(128,53,7,0.7) 30%, rgba(221,174,144,0.7) 80%);
+	width:310px;
+	height:45px;	
+	box-shadow:0 0 2px black;
+	color: white;
+	font-size:22px;
+	font-weight:bold;
+ 	font-style:italic;
+}
+.komb{
+	font-family:'Josefin Sans', sans-serif;
+	font-size:26px;
+}
+#glavni{
+	width:95%;
+	padding:10px;
+	margin: 10px 10px 10px;
+	float:left;
+}
+#tabela2{
+	margin-bottom:20px;
+}
+tr{
+	height:35px;
+}
+.broj{
+	width:300px;
+	height:58px;
+	text-align:center;
+	background:#ceceff;
+}
+#prvi2{
+	font-size:17px;
+	font-weight:bold;
+	font-family:cursive;
+}
+#prvi{
+	font-size:17px;
+	font-weight:bold;
+	font-family:cursive;
+	line-height:-10px;
+}
+#srednji{
+	float:left;
+	margin-left:15px;
+}
+#rezult{
+	width:480px;
+	margin:140px 10px 0 0;
+	float:right;
+}
+#rrr{
+	padding:10px;
+	font-family:cursive;
+	font-weight:bold;
+	font-size:20px;
+}
+#qq{
+	display:inline-block;
+	width:10px;
+}
+
+ 
+
+
+
+
